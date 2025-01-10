@@ -14,6 +14,7 @@ app.use(express.static("public/javascript"))
 app.use(express.static("json"))
 app.use(cookieParser())
 app.use(layouts)
+app.use(express.urlencoded({ extended: true })); // Parses form data
 
 // Determine platform
 app.use((request, response, next) => {
@@ -92,7 +93,31 @@ app.get("/new", (request, response) => {
 })
 
 app.post("/new", (request, response) => {
-  response.redirect("/success")
+  switch (request.body?.action) {
+    case "refresh":
+      response.redirect("/refresh_historical_location")
+      break
+    case "recede":
+      response.redirect("/recede_historical_location")
+      break
+    case "resume":
+      response.redirect("/resume_historical_location")
+      break
+    default:
+      response.redirect("/new")
+  }
+})
+
+app.get("/recede_historical_location", (request, response) => {
+  response.render("success", { title: "Dummy" })
+})
+
+app.get("/resume_historical_location", (request, response) => {
+  response.render("success", { title: "Dummy" })
+})
+
+app.get("/refresh_historical_location", (request, response) => {
+  response.render("success", { title: "Dummy" })
 })
 
 app.get("/bridge-form", (request, response) => {
