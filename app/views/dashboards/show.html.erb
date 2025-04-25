@@ -1,9 +1,17 @@
 <% content_for :title, "Navigation" %>
 
 <div class="top-level-container">
-  <h1 class="hide@native margin-bs-xl text-large-title">Navigation</h1>
-  <p>This demo app will help you get acquainted with Hotwire Native.</p>
+  <%= link_to navigation_path, class: "formatted-list__item", data: { turbo: false } do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Push a screen on the stack." %></p>
+      <p class="no-margin color-on-body-muted"><%= "Target blank" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
 
+  <%= render "navigations/pdfs" %>
+  <h3 class="margin-bs-xl margin-be-l text-title">Navigation</h3>
   <div class="formatted-list formatted-list--top-level">
     <%= render "navigations/item",
       path: navigation_path,
@@ -65,6 +73,30 @@
       path: "sms:555-555-5555",
       icon: "speech-bubble-bold",
       name: "<code>sms:</code> URLs".html_safe,
+      description: "Handle non-http(s) URLs natively." %>
+
+    <%= render "navigations/item",
+      path: "tel:555-555-5555",
+      icon: "speech-bubble-bold",
+      name: "<code>tel:</code> URLs".html_safe,
+      description: "Handle non-http(s) URLs natively." %>
+
+    <%= render "navigations/item",
+      path: "mailto:555-555-5555",
+      icon: "speech-bubble-bold",
+      name: "<code>mailto:</code> URLs".html_safe,
+      description: "Handle non-http(s) URLs natively." %>
+
+    <%= render "navigations/item",
+      path: "maps:555-555-5555",
+      icon: "speech-bubble-bold",
+      name: "<code>maps:</code> URLs".html_safe,
+      description: "Handle non-http(s) URLs natively." %>
+
+    <%= render "navigations/item",
+      path: "geo:555-555-5555",
+      icon: "speech-bubble-bold",
+      name: "<code>geo:</code> URLs".html_safe,
       description: "Handle non-http(s) URLs natively." %>
   </div>
 </div>

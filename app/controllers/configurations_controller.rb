@@ -34,7 +34,21 @@ class ConfigurationsController < ApplicationController
             presentation: "clear_all"
           },
           comment: "Reset navigation stacks when visiting root page."
-        }
+        },
+        {
+          patterns: [
+            ".*\\?.*mobile_app_open_in_external_browser=true.*",
+            ".pdf$",
+            ".csv$",
+          ],
+          properties: {open_in_external_browser: true}
+        },
+        {
+          patterns: [
+            ".*\\?.*mobile_app_download=true.*",
+          ],
+          properties: {download: true}
+        },
       ]
     }
   end
@@ -43,6 +57,14 @@ class ConfigurationsController < ApplicationController
     render json: {
       settings: {},
       rules: [
+        {
+          patterns: [
+            ".*\\?.*mobile_app_open_in_external_browser=true.*",
+            ".pdf$",
+            ".csv$",
+          ],
+          properties: {open_in_external_browser: true}
+        },
         {
           patterns: [
             ".*"

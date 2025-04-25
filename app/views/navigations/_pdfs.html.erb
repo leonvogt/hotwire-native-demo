@@ -1,0 +1,56 @@
+<h3 class="margin-bs-xl margin-be-l text-title">PDFs</h3>
+<div class="formatted-list formatted-list--top-level">
+  <%= link_to "test.pdf", class: "formatted-list__item" do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Public PDF" %></p>
+      <p class="no-margin color-on-body-muted"><%= "Handle /public/test.pdf" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+
+  <%= link_to "test.pdf", class: "formatted-list__item", download: true do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Public PDF" %></p>
+      <p class="no-margin color-on-body-muted"><%= "Handle /public/test.pdf (download: true)" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+
+  <%= link_to "test.pdf", class: "formatted-list__item", data: { turbo: false } do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Public PDF" %></p>
+      <p class="no-margin color-on-body-muted"><%= "Handle /public/test.pdf (turbo false & target blank)" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+
+  <%= link_to "test.pdf", class: "formatted-list__item", data: { turbo: false }, target: "_blank" do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Public PDF" %></p>
+      <p class="no-margin color-on-body-muted"><%= "Handle /public/test.pdf (turbo false & target blank)" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+
+  <%= link_to "/pdfs?mobile_app_open_in_external_browser=true", class: "formatted-list__item", download: true do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Controller PDF inline" %></p>
+      <p class="no-margin color-on-body-muted"><%= "send_file mit disposition: :inline" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+
+  <%= link_to "/pdfs??mobile_app_open_in_external_browser=true&disposition=attachment", class: "formatted-list__item", download: true do %>
+    <%= icon_tag "external-link-bold" %>
+    <div class="flex-fill">
+      <p class="no-margin text-headline"><%= "Controller PDF attachment" %></p>
+      <p class="no-margin color-on-body-muted"><%= "send_file mit disposition: :attachment" %></p>
+    </div>
+    <%= icon_tag "chevron-right-bold", size: :small, class: "color-subtle" %>
+  <% end %>
+</div>
