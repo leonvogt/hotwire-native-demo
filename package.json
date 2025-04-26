@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@hotwired/hotwire-native-bridge": "^1.0.0",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.12",
+    "stimulus-vite-helpers": "^3.1.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14",
+    "vite-plugin-ruby": "^5.1.1"
+  }
+}
