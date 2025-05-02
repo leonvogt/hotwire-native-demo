@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   resources :numbers, only: %i[index show]
 
   resource :pdfs, only: [:show]
+  resource :test, only: [:show]
+  resource :download, only: [:show]
 
   resources :resources, only: %i[index new create] do
     collection do

@@ -63,7 +63,9 @@ class ConfigurationsController < ApplicationController
             ".pdf$",
             ".csv$",
           ],
-          properties: {open_in_external_browser: true}
+          properties: {
+            open_in_external_browser: true
+          }
         },
         {
           patterns: [
