@@ -72,6 +72,7 @@ class ConfigurationsController < ApplicationController
           ],
           properties: {
             context: "modal",
+            uri: "hotwire://fragment/web/modal/sheet",
             pull_to_refresh_enabled: false
           }
         },

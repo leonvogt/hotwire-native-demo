@@ -2,6 +2,8 @@
 
 <div class="top-level-container">
   <h1 class="hide@native margin-bs-xl text-large-title">Modal Navigation</h1>
+  <strong>MODAL</strong>
+  <strong><%= Time.current.to_s %></strong>
   <p>
     This screen was presented as a modal.<br>
     Triggered via the following Path Configuration rule:<br>
@@ -49,5 +51,30 @@
       icon: "stop-bold",
       name: "Resume navigation",
       description: "Dismiss the modal stack." %>
+  </div>
+
+  <h3 class="margin-bs-xl margin-be-l text-title">Form Submit -> Historical Navigation</h3>
+
+  <div class="formatted-list formatted-list--top-level">
+    <%= render "navigations/item",
+      path: server_side_routing_bugs_path(navigation_action: "recede"),
+      icon: "arrow-left-bold",
+      name: "Recede navigation",
+      data: {turbo_method: :post},
+      description: "Form submit -> Pop this screen off the stack." %>
+
+    <%= render "navigations/item",
+      path: server_side_routing_bugs_path(navigation_action: "refresh"),
+      icon: "arrow-clockwise-bold",
+      name: "Refresh navigation",
+      data: {turbo_method: :post},
+      description: "Form submit -> Refresh this screen." %>
+
+    <%= render "navigations/item",
+      path: server_side_routing_bugs_path(navigation_action: "resume"),
+      icon: "stop-bold",
+      name: "Resume navigation",
+      data: {turbo_method: :post},
+      description: "Form submit -> Do nothing." %>
   </div>
 </div>
