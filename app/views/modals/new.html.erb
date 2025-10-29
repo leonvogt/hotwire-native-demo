@@ -15,6 +15,17 @@
 }</code></pre>
   </p>
 
+  <h3 class="margin-bs-xl margin-be-l text-title">Redirection Bug</h3>
+
+  <div class="formatted-list formatted-list--top-level">
+     <%= render "navigations/item",
+      path: redirection_with_updated_url_bugs_path,
+      icon: "arrow-left-bold",
+      name: "Redirect back to /navigation?foo=bar",
+      data: {turbo_method: :post},
+      description: "Form submit -> redirect back to /navigation with param foo=bar" %>
+  </div>
+
   <div class="formatted-list formatted-list--top-level">
     <%= render "navigations/item",
       path: second_navigation_path,

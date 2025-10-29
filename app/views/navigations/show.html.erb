@@ -2,10 +2,20 @@
 
 <div class="top-level-container">
   <h1 class="hide@native margin-bs-xl text-large-title">Basic Navigation</h1>
+  <strong>Navigation</strong>
+  <strong><%= Time.current.to_s %></strong>
   <p>
     This screen was pushed onto the navigation stack.<br>
     This is the default behavior, no custom options are required.
   </p>
+
+  <h3 class="margin-bs-xl margin-be-l text-title">
+    Param foo: <%= params[:foo] %>
+  </h3>
+
+  <button data-controller="update-url" data-action="click->update-url#update">
+    SET param foo
+  </button>
 
   <div class="formatted-list formatted-list--top-level">
     <%= render "navigations/item",
