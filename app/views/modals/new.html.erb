@@ -17,6 +17,19 @@
 
   <div class="formatted-list formatted-list--top-level">
     <%= render "navigations/item",
+      path: bugs_path,
+      icon: "arrow-left-bold",
+      name: "Link to /bugs",
+      description: "Link to /bugs underneath." %>
+
+    <%= render "navigations/item",
+      path: redirect_bugs_path,
+      icon: "arrow-left-bold",
+      name: "Redirect to /bugs",
+      data: {turbo_method: :post},
+      description: "Form submit -> Redirect to /bugs underneath." %>
+
+    <%= render "navigations/item",
       path: second_navigation_path,
       icon: "arrow-return-bold",
       name: "Basic navigation",

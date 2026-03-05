@@ -4,13 +4,13 @@
   <h1 class="hide@native margin-bs-xl text-large-title">Bugs & Fixes</h1>
   <p>An area to reproduce outstanding bugs and ensure no regressions on existing fixes reappear.</p>
 
-  <p><i>No bugs currently being investigated.</i><p>
+  <h2><%= Time.current.strftime("%H:%M:%S") %></h2>
 
   <div class="formatted-list formatted-list--top-level">
-    <%# render "navigations/item",
-    path: some_bugs_path,
-    icon: "custom-bug-icon",
-    name: "Bug Title",
-    description: "Description of bug." %>
+    <%= render "navigations/item",
+      path: new_modal_path,
+      icon: "arrow-up-bold",
+      name: "Modal navigation",
+      description: "Present a modal screen." %>
   </div>
 </div>
